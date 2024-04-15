@@ -4,6 +4,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import common.JdbcTemplate;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.BufferedReader;
@@ -47,7 +49,7 @@ public class XmlParsingController {
         StringBuilder urlBuilder = new StringBuilder("http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade");
         urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + URLEncoder.encode(prop.getProperty("openapi.serviceKey.common"), "UTF-8"));
         urlBuilder.append("&" + URLEncoder.encode("LAWD_CD", "UTF-8") + "=" + URLEncoder.encode(lawdCode, "UTF-8"));
-        urlBuilder.append("&" + URLEncoder.encode("DEAL_YMD", "UTF-8") + "=" + URLEncoder.encode("202303", "UTF-8"));
+        urlBuilder.append("&" + URLEncoder.encode("DEAL_YMD", "UTF-8") + "=" + URLEncoder.encode("202301", "UTF-8")); // 23-2까지 완
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -72,7 +74,7 @@ public class XmlParsingController {
     private static void insertDataToDatabase(String xmlData) throws Exception {
         Connection conn = null;
         try {
-            conn = getSemiConnection(true); // 로컬 데이터베이스 연결
+            conn = JdbcTemplate.getSemiConnection(true); // 로컬 데이터베이스 연결
 
             // XML 파싱
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -157,40 +159,9 @@ public class XmlParsingController {
     }
 
  // 데이터베이스 연결을 위한 메서드
-    public static Connection getSemiConnection(boolean isLocalhost) throws Exception {
-        Connection conn = null;
-        Properties prop = new Properties();
-        try {
-            // 프로퍼티 파일에서 JDBC 정보를 읽어옴
-            String currentPath = XmlParsingController.class.getResource("../").getPath();
-            prop.load(new FileReader(currentPath + "common/driver.properties"));
-
-            // JDBC 드라이버 로드
-            Class.forName(prop.getProperty("jdbc.driver"));
-
-            // 로컬 또는 서버에 연결
-            if (isLocalhost) {
-                conn = DriverManager.getConnection(
-                        prop.getProperty("jdbc.url"),
-                        prop.getProperty("jdbc.username"),
-                        prop.getProperty("jdbc.password")
-                );
-            } else {
-                conn = DriverManager.getConnection(
-                        prop.getProperty("jdbc.dbserver.url"),
-                        prop.getProperty("jdbc.username"),
-                        prop.getProperty("jdbc.password")
-                );
-            }
-
-            if (conn != null) {
-                System.out.println("Connection successful");
-            } else {
-                System.out.println("Connection failed!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return conn;
+    public static Connection getSemiConnection() throws Exception {
+    	Connection conn = null;
+    	JdbcTemplate.getConnection();
+    	return conn;
     }
 }
