@@ -1,4 +1,4 @@
-package controller;
+package api;
 
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -24,12 +24,12 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class BuildingRegisterTitleController {
+public class BuildingRegisterTitleAPI {
     public static void main(String[] args) {
     	try {
             // 법정동 코드를 파일에서 읽어오기
 //            List<String> lawdCodeList = LawdCodeReaderController.readFile("C:\\workspace\\Java\\richngo\\src\\main\\webapp\\WEB-INF\\resources\\지역별코드.txt");
-    		List<String> lawdCodeList = LawdCodeReaderController.readFile("C:/workspace/Java/richngo/src/main/webapp/WEB-INF/resources/지역별코드.txt");
+    		List<String> lawdCodeList = LawdCodeReader.readFile("C:/workspace/Java/richngo/src/main/webapp/WEB-INF/resources/지역별코드.txt");
             for (String lawdCode : lawdCodeList) {
                 String xmlData = getXmlData(lawdCode); // API 호출하여 XML 데이터 가져오기
                 insertDataToDatabase(xmlData); // XML 데이터베이스에 삽입
@@ -41,7 +41,7 @@ public class BuildingRegisterTitleController {
     
 	public static String getXmlData(String lawdCode) throws Exception {
     	Properties prop = new Properties();
-        try (InputStream input = XmlParsingController.class.getClassLoader().getResourceAsStream("common/driver.properties")) {
+        try (InputStream input = ApartmentTransactioPriceAPI.class.getClassLoader().getResourceAsStream("common/driver.properties")) {
             prop.load(input);
         } catch (IOException ex) {
             ex.printStackTrace();

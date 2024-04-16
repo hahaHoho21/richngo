@@ -1,4 +1,4 @@
-package controller;
+package api;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -24,12 +24,12 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 
-public class XmlParsingController {
+public class ApartmentTransactioPriceAPI {
     public static void main(String[] args) {
     	try {
             // 법정동 코드를 파일에서 읽어오기
 //            List<String> lawdCodeList = LawdCodeReaderController.readFile("C:\\workspace\\Java\\richngo\\src\\main\\webapp\\WEB-INF\\resources\\지역별코드.txt");
-    		List<String> lawdCodeList = LawdCodeReaderController.readFile("C:/workspace/Java/richngo/src/main/webapp/WEB-INF/resources/지역별코드.txt");
+    		List<String> lawdCodeList = LawdCodeReader.readFile("C:/workspace/Java/richngo/src/main/webapp/WEB-INF/resources/지역별코드.txt");
             for (String lawdCode : lawdCodeList) {
                 String xmlData = getXmlData(lawdCode); // API 호출하여 XML 데이터 가져오기
                 insertDataToDatabase(xmlData); // XML 데이터베이스에 삽입
@@ -41,7 +41,7 @@ public class XmlParsingController {
 
     private static String getXmlData(String lawdCode) throws Exception {
     	Properties prop = new Properties();
-        try (InputStream input = XmlParsingController.class.getClassLoader().getResourceAsStream("common/driver.properties")) {
+        try (InputStream input = ApartmentTransactioPriceAPI.class.getClassLoader().getResourceAsStream("common/driver.properties")) {
             prop.load(input);
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -49,7 +49,7 @@ public class XmlParsingController {
         StringBuilder urlBuilder = new StringBuilder("http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade");
         urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + URLEncoder.encode(prop.getProperty("openapi.serviceKey.common"), "UTF-8"));
         urlBuilder.append("&" + URLEncoder.encode("LAWD_CD", "UTF-8") + "=" + URLEncoder.encode(lawdCode, "UTF-8"));
-        urlBuilder.append("&" + URLEncoder.encode("DEAL_YMD", "UTF-8") + "=" + URLEncoder.encode("202212", "UTF-8")); // 23-2까지 완
+        urlBuilder.append("&" + URLEncoder.encode("DEAL_YMD", "UTF-8") + "=" + URLEncoder.encode("202210", "UTF-8")); // 23-2까지 완
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
