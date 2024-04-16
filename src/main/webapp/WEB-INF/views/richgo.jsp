@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+
 <!-- jquery 연동 -->
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -31,9 +33,7 @@
 	crossorigin="anonymous">
 
 <!-- myrich css -->
-<link rel="stylesheet"
-	href="/richgo/resources/myrich.css">
-	
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myrich.css">
 	
 </head>
 <body>
@@ -42,7 +42,7 @@
 		<div class="container">
 			<ul class="nav">
 				<li><a
-					href="http://192.168.10.40:5500/views/20240318_richgo.html"
+					href="http://127.0.0.1:8080/my/c"
 					target="_self" class="nav-link px-1 text-secondary ">Home</a></li>
 				<li><a href="#" class="nav-link px-3 text-secondary">About</a></li>
 			</ul>
@@ -124,19 +124,19 @@
 		style="width: 4.5rem;">
 		<ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
 			<li class="nav-item"><a
-				href="http://192.168.10.40:5500/views/20240318_richgo.html"
+				href="http://127.0.0.1:8080/my/c"
 				target="_self" class="nav-link py-3 border-bottom"
 				aria-current="page" title="Search" data-bs-toggle="tooltip"
 				data-bs-placement="right"> <svg class="bi" width="8" height="8"
 						role="img" aria-label="Search">
-                        <img src="resources/images/home_36px.png" alt="home" />
+                        <img src="${pageContext.request.contextPath}/resources/images/home_36px.png" alt="home" />
                     </svg>
 			</a></li>
 			<li><a href="#" class="nav-link py-3 border-bottom"
 				title="Filter" data-bs-toggle="tooltip" data-bs-placement="right"
 				onclick="openNav()"> <svg class="bi" width="8" height="8"
 						role="img" aria-label="Filter">
-                        <img src="resources/images/filter_24px.png"
+                        <img src="${pageContext.request.contextPath}/resources/images/filter_24px.png"
 							alt="Filter" />
                         <use xlink:href="#speedometer2" />
                     </svg>
@@ -144,7 +144,7 @@
 			<li><a href="#" class="nav-link py-3 border-bottom control-btn"
 				id="cadastral" type="button"> <svg class="bi" width="8"
 						height="8" role="img">
-                        <img src="resources/images/layers_24px.png"
+                        <img src="${pageContext.request.contextPath}/resources/images/layers_24px.png"
 							alt="layers" />
                         <use xlink:href="#speedometer2" />
                     </svg>
@@ -172,20 +172,25 @@
 
 	<!--  -->
 </body>
-
-<!-- 지도, 마커, 검색후 화면 이동 API -->
-<script src="/richgo/resources/naverMap.js"></script>
+ 
 
 <!-- 네이버지도의 주소와 좌표 검색 API  -->
-<script src="/richgo/resources/naverAddressAPI.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/naverAddressAPI.js"></script>
 
-<!-- 부트스트랩 js  -->
+
+ <!-- 지도, 마커, 검색후 화면 이동 API -->
+<script src="${pageContext.request.contextPath}/resources/js/naverMap.js"></script>
+ <!-- 부트스트랩 js  -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 
 </html>
+<script>
+
+</script>
+
 
 <!-- 
      주소 위도 경도 -
