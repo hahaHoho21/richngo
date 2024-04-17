@@ -8,11 +8,14 @@ body {
     overflow-y: hidden;
 }
 
+
+
 /* 네비바 검색창 */
 body>header {
     position: relative;
     height: 70px;
     background-color: #f8f9fa;
+    z-index: 10;
 }
 
 body>div.search,
