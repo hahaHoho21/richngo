@@ -1,4 +1,4 @@
-package api;
+package richngo.api;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class LawdCodeReader {
     public static void main(String[] args) {
-        String filePath = "C:\\workspace\\Java\\richngo\\src\\main\\webapp\\WEB-INF\\resources\\지역별코드.txt";
+        String filePath = "C:\\workspace\\Java\\richngo\\src\\main\\webapp\\resources\\지역별코드.txt";
         List<String> lines = readFile(filePath);
         if (lines != null) {
             System.out.println("File contents:");

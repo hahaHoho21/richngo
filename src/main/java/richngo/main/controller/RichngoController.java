@@ -1,4 +1,4 @@
-package controller;
+package richngo.main.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,15 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/go2")
-public class Controller2 extends HttpServlet {
+@WebServlet("/go")
+public class RichngoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Controller2() {
+	public RichngoController() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/WEB-INF/views/test.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/richgo.jsp").forward(request, response);
 	}
 }
