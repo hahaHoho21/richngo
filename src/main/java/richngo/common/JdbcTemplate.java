@@ -1,4 +1,4 @@
-package common;
+package richngo.common;
 
 import java.io.FileReader;
 import java.io.FileWriter;

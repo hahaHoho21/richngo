@@ -17,7 +17,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import common.JdbcTemplate;
+import richngo.common.JdbcTemplate;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -41,7 +41,7 @@ public class BuildingRegisterTitleAPI {
     
 	public static String getXmlData(String lawdCode) throws Exception {
     	Properties prop = new Properties();
-        try (InputStream input = ApartmentTransactioPriceAPI.class.getClassLoader().getResourceAsStream("common/driver.properties")) {
+        try (InputStream input = ApartmentTransactioPriceAPI.class.getClassLoader().getResourceAsStream("richngo.common/driver.properties")) {
             prop.load(input);
         } catch (IOException ex) {
             ex.printStackTrace();
