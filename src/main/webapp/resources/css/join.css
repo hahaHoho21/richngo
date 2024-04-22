@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-button{
-	border : 0;
-	background-color: transparent;
+button {
+	margin-bottom: 20px;
 }
 
 body {
@@ -40,17 +39,45 @@ body > div > div > div{
 .body-form {
     position: relative;
 	height: 260px;
+	bottom: 50px;
 }
 
+input[type=checkbox]{
+    all: unset;
+    cursor: pointer;
+    background-color: transparent;
+    width: 22px;
+    height: 22px;
+    border: 1.2px solid #fff;
+    border-radius: 4px;
+    margin: 3px 0 0;
+}
 
-#frm-login > div:nth-child(3) > button{
+.agree-btn{
+	position:relative;
+	bottom:6px;
+	font-size:14px;
+	color: #fab400;
+	border:0;
+	font-weight: bold;
+    background-color: transparent;
+}
+
+.require-span{
+	color: #fff;
+}
+
+.agree_all, 
+#frm-login > div:nth-child(6) > button{
+	position:relative;
     width: 318px;
     height: 50px;
+    border: 1px solid #fff;
     border-radius: 4px;
     font-size: 16px;
     font-weight: bold;
-    color: #0a2540;
-    background-color: white;
+    color: #fff;
+    background-color: rgba(0,0,0, 0.5);
 }
 
 .login-box-bg{
@@ -85,6 +112,7 @@ body > div > div > div{
 
 /* 닫기버튼 */
 .close{
+    border : 0;
 	position: absolute;
     top: 20px;
     right: 8px;
@@ -92,44 +120,23 @@ body > div > div > div{
     height: 50px;
     background-image: url(../images/close.png);
     background-repeat: no-repeat;
+	background-color: transparent;
 }
 
 
-/* 입력칸 */
-input{
-    width: 248px;
-    height: 12px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 18px 50px 18px 18px;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #fff;
-    border: solid 1.2px #fff;
-    background-color: transparent;
-}
-
-input[type=password] {
-	margin-bottom: 50px;
-}
-
-.forgot-pw-btn {
-	padding: 10px;
-	margin-bottom: 20px;
-	color: #fff;
-	opacity: 0.9;
-}
 
 /* 회원가입 */
 .signup {
     position: relative;
     font-size: 13.8px;
-    bottom: -20px;
+    bottom: -60px;
     opacity: 0.9;
 }
 .signup-btn{
+    border : 0;
     padding: 10px;
     color: #fab400;
     opacity: 0.9;
     font-weight: bold;
+	background-color: transparent;
 }

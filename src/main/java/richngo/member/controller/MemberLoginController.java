@@ -42,7 +42,6 @@ public class MemberLoginController extends HttpServlet {
 		MemberLoginDto dto = new MemberLoginDto(email, pwd);
 		System.out.println("/login doPost dto: "+ dto);
 
-
 		int result = 0;
 		MemberInfoDto resultInfo = service.loginGetInfo(dto);
 		System.out.println(resultInfo);

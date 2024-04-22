@@ -8,26 +8,53 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/login.css">
-
 </head>
 
 <body>
+	<img src="${pageContext.request.contextPath}/resources/images/office-buildings.jpg"
+		width="100%" height="100%">
+	<div class="login-box-bg">
+	</div>
 	<div class="login-box">
-		<div>x</div>
-		<div>
-			<div>우리동네 부동산</div>
-			<div>리치앤고</div>
-			<form id="frm-login">
-				<div><label>이메일</label></div>
-				<div><input type="email" name="email"></div>
-				<div><label>패스워드</label></div>
-				<div><input type="password" name="pwd"></div>
-				<div><button type="button" value="로그인" class="btn submit">로그인</button></div>
-				<button type="button" class="forgot-pw-btn">비밀번호 찾기</button>
-			
-			</form>
+		<a href="http://192.168.10.40:8080/myrich/go" target="_self">
+			<button class="close"></button>
+		</a>
+		<div class=login-box-body>
+			<div class="body-header">
+				<div>우리동네 부동산</div>
+				<div>리치앤고</div>
+			</div>
+			<div class="body-form">
+				<form id="frm-login">
+					<div>
+						<div class="label-text">이메일</div>
+						<input type="email" name="email" autocomplete="new-email" required=""
+							placeholder="이메일을 입력해주세요.">
+					</div>
+					<div>
+						<div class="label-text">비밀번호</div>
+						<input type="password" name="pwd" autocomplete="" required=""
+							placeholder="비밀번호를 입력해주세요.">
+					</div>
+					<div>
+						<button type="button" value="로그인" class="btn submit">로그인</button>
+					</div>
+				</form>
+				<div>
+					<button type="button" class="forgot-pw-btn">비밀번호 찾기</button>
+				</div>
+				<div class="signup">
+					<div class="text">
+						* 아직 리치앤고에 계정이 없으신가요?
+						<a href=http://192.168.10.40:8080/myrich/join target="_self">
+						<button type="button" class="signup-btn">회원가입</button>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+</body>
 
 	<script>
 			$(loadedHandler);
@@ -67,6 +94,5 @@
 
 			}
 		</script>
-	</div>
 </body>
 </html>
