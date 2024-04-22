@@ -149,7 +149,7 @@ public class BuildingRegisterTitleAPI {
 //                pstmt.close();
                 }
             System.out.println("Data inserted successfully");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (conn != null) {

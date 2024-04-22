@@ -13,7 +13,7 @@ public class JdbcTemplate {
 	private JdbcTemplate() {}
 	
 	// static 메소드로 만들기
-	  public static Connection getSemiConnection(boolean isLocalhost) throws Exception {
+	  public static Connection getSemiConnection(boolean isLocalhost){
 	        Connection conn = null;
 	        Properties prop = new Properties();
 	        try {
