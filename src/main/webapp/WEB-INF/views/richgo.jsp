@@ -42,7 +42,7 @@
 		<div class="container">
 			<ul class="nav">
 				<li><a
-					href="http://127.0.0.1:8080/my/c"
+					href="http://192.168.10.40:8080/myrich/go"
 					target="_self" class="nav-link px-1 text-secondary ">Home</a></li>
 				<li><a href="#" class="nav-link px-3 text-secondary">About</a></li>
 			</ul>
@@ -57,8 +57,14 @@
 				</div>
 			</div>
 			<div class="text-end">
-				<button type="button" class="btn">Login</button>
-				<button type="button" class="btn btn-warning">Sign-up</button>
+				<a
+					href="http://192.168.10.40:8080/myrich/login"
+					target="_self">
+				<button type="button" class="btn">Login</button></a>
+				<a
+					href="http://192.168.10.40:8080/myrich/agree"
+					target="_self">
+				<button type="button" class="btn btn-warning">Sign-up</button></a>
 			</div>
 		</div>
 	</header>

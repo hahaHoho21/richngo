@@ -1,112 +1,114 @@
 @charset "UTF-8";
 
-button{
-	border : 0;
+button {
+	border: 0;
 	background-color: transparent;
+	cursor:pointer;
 }
 
 body {
 	margin: 0 auto;
-    position: fixed;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
- 	background-size: cover;
-    background-position: center;
+	position: fixed;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
-body > div > div > div{
+body>div>div>div {
 	margin-bottom: 20px;
 }
 
 .label-text {
-    position: relative;
-    margin-bottom: 10px;
-    width: 100%;
-    font-size: 14px;
-    color: #fff;
-    text-align: left;
+	position: relative;
+	margin-bottom: 10px;
+	width: 100%;
+	font-size: 14px;
+	color: #fff;
+	text-align: left;
 }
 
 .body-header {
 	height: 108px;
-    margin-top: 90px;
-    margin-bottom: 43px;
-    font-size: 25px;
-    font-weight: 500;
+	margin-top: 90px;
+	margin-bottom: 43px;
+	font-size: 25px;
+	font-weight: 500;
 }
 
 .body-form {
-    position: relative;
+	position: relative;
 	height: 260px;
+	bottom: 50px;
 }
 
-
-#frm-login > div:nth-child(3) > button{
-    width: 318px;
-    height: 50px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #0a2540;
-    background-color: white;
+#frm-login>div:nth-child(3)>button {
+	width: 318px;
+	height: 50px;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #0a2540;
+	background-color: white;
+	
 }
-
-.login-box-bg{
+#frm-login > div:nth-child(2){
+	padding-bottom: 50px;
+}
+.login-box-bg {
 	position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-height: 659px;
-    max-width: 458px;
-    background-color: rgba(0,0,0, 0.7);
-    filter: blur(3px);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 659px;
+	max-width: 458px;
+	background-color: rgba(0, 0, 0, 0.7);
+	filter: blur(3px);
 }
 
-.login-box{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	max-height: 659px;
-	max-width: 458px;
-	color: #fff;
+.login-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 659px;
+	max-width: 458px;
+	color: #fff;
 }
-
 
 .login-box-body {
-    margin: 30px 70px;
+	margin: 30px 70px;
 }
 
 /* 닫기버튼 */
-.close{
+.close {
 	position: absolute;
-    top: 20px;
-    right: 8px;
-    width: 50px;
-    height: 50px;
-    background-image: url(../images/close.png);
-    background-repeat: no-repeat;
+	top: 20px;
+	right: 8px;
+	width: 50px;
+	height: 50px;
+	background-image: url(../images/close.png);
+	background-repeat: no-repeat;
 }
 
-
 /* 입력칸 */
-input{
-    width: 248px;
-    height: 12px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    padding: 18px 50px 18px 18px;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #fff;
-    border: solid 1.2px #fff;
-    background-color: transparent;
+input {
+	width: 248px;
+	height: 12px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 18px 50px 18px 18px;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #fff;
+	border: solid 1.2px #fff;
+	background-color: transparent;
 }
 
 input[type=password] {
@@ -122,14 +124,15 @@ input[type=password] {
 
 /* 회원가입 */
 .signup {
-    position: relative;
-    font-size: 13.8px;
-    bottom: -20px;
-    opacity: 0.9;
+	position: relative;
+	font-size: 13.8px;
+	bottom: -20px;
+	opacity: 0.9;
 }
-.signup-btn{
-    padding: 10px;
-    color: #fab400;
-    opacity: 0.9;
-    font-weight: bold;
+
+.signup-btn {
+	padding: 10px;
+	color: #fab400;
+	opacity: 0.9;
+	font-weight: bold;
 }

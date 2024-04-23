@@ -46,7 +46,7 @@
 				<div class="signup">
 					<div class="text">
 						* 아직 리치앤고에 계정이 없으신가요?
-						<a href=http://192.168.10.40:8080/myrich/join target="_self">
+						<a href=http://192.168.10.40:8080/myrich/agree target="_self">
 						<button type="button" class="signup-btn">회원가입</button>
 						</a>
 					</div>
@@ -79,7 +79,7 @@
 									if (prePage == "write") {
 										location.href = "${pageContext.request.contextPath}/board/write";
 									}
-									location.href = "${pageContext.request.contextPath}/main";
+									location.href = "${pageContext.request.contextPath}/go";
 								} else {
 									alert("아이디 또는 패스워드가 일치하지 않습니다.\n다시 확인하고 로그인해주세요.");
 									$("[name=pwd]").val("");
@@ -91,7 +91,6 @@
 										+ "\n" + "error: " + error);
 							}
 						});
-
 			}
 		</script>
 </body>
