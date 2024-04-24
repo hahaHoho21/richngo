@@ -42,7 +42,7 @@
 		<div class="container">
 			<ul class="nav">
 				<li><a
-					href="http://192.168.10.40:8080/myrich/go"
+					href="${pageContext.request.contextPath}/go"
 					target="_self" class="nav-link px-1 text-secondary ">Home</a></li>
 				<li><a href="#" class="nav-link px-3 text-secondary">About</a></li>
 			</ul>
@@ -58,11 +58,11 @@
 			</div>
 			<div class="text-end">
 				<a
-					href="http://192.168.10.40:8080/myrich/login"
+					href="${pageContext.request.contextPath}/login"
 					target="_self">
 				<button type="button" class="btn">Login</button></a>
 				<a
-					href="http://192.168.10.40:8080/myrich/agree"
+					href="${pageContext.request.contextPath}/agree"
 					target="_self">
 				<button type="button" class="btn btn-warning">Sign-up</button></a>
 			</div>
@@ -130,7 +130,7 @@
 		style="width: 4.5rem;">
 		<ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
 			<li class="nav-item"><a
-				href="http://127.0.0.1:8080/my/c"
+				href="${pageContext.request.contextPath}/go"
 				target="_self" class="nav-link py-3 border-bottom"
 				aria-current="page" title="Search" data-bs-toggle="tooltip"
 				data-bs-placement="right"> <svg class="bi" width="8" height="8"

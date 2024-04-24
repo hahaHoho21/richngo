@@ -1,27 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>리치앤고 회원가입</title>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/join.css">
-</head>
 
-<body>
-	<img
-		src="${pageContext.request.contextPath}/resources/images/office-buildings.jpg"
-		width="100%" height="100%">
+<div  id="div-join" style="display:none;">
 	<div class="login-box-bg"></div>
 	<div class="login-box">
-		<a href="http://192.168.10.40:8080/myrich/go" target="_self">
+		<a href="${pageContext.request.contextPath}/go" target="_self">
 			<button class="close"></button>
 		</a>
 		<div class=login-box-body>
-			<div class="body-header">
+			<div class="body-header-join">
 				<div>회원가입</div>
 			</div>
 			<div class="body-form">
@@ -48,7 +35,7 @@
 				</form>
 				<div class="signup">
 					<div class="text">
-						* 이미 계정이 있으신가요? <a href=http://192.168.10.40:8080/myrich/login
+						* 이미 계정이 있으신가요? <a href="${pageContext.request.contextPath}/login"
 							target="_self">
 							<button type="button" class="signup-btn">로그인</button>
 						</a>
@@ -57,7 +44,8 @@
 			</div>
 		</div>
 	</div>
-</body>
+</div>
+
 <div class="modal" style="display:none;">
 		<img
 			src="${pageContext.request.contextPath}/resources/images/office-buildings.jpg"
@@ -68,19 +56,18 @@
 				<div>
 					회원가입이 성공적으로 <br> 완료되었습니다.
 				</div>
-				<div>우리동네 디스코에서 유용한 정보 얻어가세요!</div>
+				<div>리치앤고에서 유용한 정보 얻어가세요!</div>
 				<div>
-					<a href=http://192.168.10.40:8080/myrich/go target="_self">
+					<a href="${pageContext.request.contextPath}/go" target="_self">
 						<button type="button" class="btn submit">확인</button>
 					</a>
 				</div>
 			</div>
 </div>
-	<script>
-        const modal = document.querySelector('.modal');
-        const btnOpenModal=document.querySelector('#btn-open-modal');
-        btnOpenModal.addEventListener("click", ()=>{
-        modal.style.display="flex";
-        });
-    </script>
-</html>
+<script>
+       const modal = document.querySelector('.modal');
+       const btnOpenModal=document.querySelector('#btn-open-modal');
+       btnOpenModal.addEventListener("click", ()=>{
+       modal.style.display="flex";
+       });
+</script>

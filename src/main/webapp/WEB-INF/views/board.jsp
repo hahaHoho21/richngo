@@ -8,11 +8,13 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/agree.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/join.css">
-</head>
+<%-- 
 <jsp:include page="/WEB-INF/views/join.jsp"/>
-<body >
+ --%>
+</head>
+<body>
+
+<%-- 
 	<img
 		src="${pageContext.request.contextPath}/resources/images/office-buildings.jpg"
 		width="100%" height="100%">
@@ -62,7 +64,10 @@
 		</div>
 	</div>
 </div>
+
+ --%>
 </body>
+<!-- 
 	<script>
 	$(function(){
 		$("#div-agree").show();
@@ -78,4 +83,5 @@
 		//location.href="${pageContext.request.contextPath}/join"; 
 	}
 	</script>
+	 -->
 </html>

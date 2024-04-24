@@ -1,25 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>리치앤고 회원가입</title>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/agree.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/join.css">
-</head>
-<jsp:include page="/WEB-INF/views/join.jsp"/>
-<body >
-	<img
-		src="${pageContext.request.contextPath}/resources/images/office-buildings.jpg"
-		width="100%" height="100%">
-<div id="div-agree">
-	<div class="login-box-bg"></div>
-	<div class="login-box">
-		<a href="${pageContext.request.contextPath}/go" target="_self">
+    pageEncoding="UTF-8"%>
+<div class="login-box divtest1">
+		<a href="http://192.168.10.40:8080/myrich/go" target="_self">
 			<button class="close"></button>
 		</a>
 		<div class=login-box-body>
@@ -27,7 +9,7 @@
 				<div>이용약관</div>
 			</div>
 			<div class="body-form">
-				<form id="frm-agree">
+				<form id="frm-login">
 					<button type="button" class="agree_all" onclick="nextDisable()">
 						<div>√ 모두 확인, 동의합니다.</div>
 					</button>
@@ -53,7 +35,7 @@
 				</form>
 				<div class="signup">
 					<div class="text"> * 이미 계정이 있으신가요? 
-						<a href="${pageContext.request.contextPath}/login" target="_self">
+						<a href=http://192.168.10.40:8080/myrich/login target="_self">
 							<button type="button" class="signup-btn">로그인</button>
 						</a>
 					</div>
@@ -61,21 +43,3 @@
 			</div>
 		</div>
 	</div>
-</div>
-</body>
-	<script>
-	$(function(){
-		$("#div-agree").show();
-		$("#div-join").hide();
-	});
-	function nextDisable() {
-		const nextEleTarget = document.getElementById('disable');
-		nextEleTarget.disabled = false;
-	}
-	function btnActive() {
-		$("#div-agree").hide();
-		$("#div-join").show();
-		//location.href="${pageContext.request.contextPath}/join"; 
-	}
-	</script>
-</html>

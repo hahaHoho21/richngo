@@ -16,12 +16,12 @@
 	<div class="login-box-bg">
 	</div>
 	<div class="login-box">
-		<a href="http://192.168.10.40:8080/myrich/go" target="_self">
+		<a href="${pageContext.request.contextPath}/go" target="_self">
 			<button class="close"></button>
 		</a>
 		<div class=login-box-body>
 			<div class="body-header">
-				<div>우리동네 부동산</div>
+				<div>우리동네 부동산 </div>
 				<div>리치앤고</div>
 			</div>
 			<div class="body-form">
@@ -46,7 +46,7 @@
 				<div class="signup">
 					<div class="text">
 						* 아직 리치앤고에 계정이 없으신가요?
-						<a href=http://192.168.10.40:8080/myrich/agree target="_self">
+						<a href="${pageContext.request.contextPath}/agree" target="_self">
 						<button type="button" class="signup-btn">회원가입</button>
 						</a>
 					</div>
