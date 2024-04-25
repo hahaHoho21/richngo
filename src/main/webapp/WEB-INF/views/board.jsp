@@ -29,12 +29,16 @@
 							<div class="board grid">
 								<div class="flex">
 									<div>${dto.boardId }</div>
-									<div>${dto.boardWriter }</div>
 									<div>${dto.writeTime }</div>
-									<div>${dto.readCount }</div>
+									<div>${dto.memEmail }</div>
+									<div>${dto.qnatype }</div>
+									<div>${dto.qnatitle }</div>
+									<div>${dto.qnacontent }</div>
+									<div>${dto.processingStatus }</div>
+									<div>${dto.completeTime }</div>
 								</div>
-								<div class="subject">${dto.subject }</div>
-								<div>${dto.content }</div>
+								<div class="subject">${dto.qnatitle }</div>
+								<div>${dto.qnacontent }</div>
 								<div>
 									<form id="frm-reply">
 										<input type="hidden" name="boardId" value="${dto.boardId }">
@@ -50,7 +54,8 @@
 									</form>
 								</div>
 								<div class="reply-wrap">
-		<c:forEach items="${dto.replydtolist }" var="replydto">
+									<%-- 	
+	<c:forEach items="${dto.replydtolist }" var="replydto">
 			<form class="frm-rreply">
 			<input type="hidden" name="boardId" value="${dto.boardId }">
 			<input type="hidden" name="boardReplyId" value="${replydto.boardReplyId }">
@@ -67,6 +72,7 @@
 			</div>
 			</form>
 		</c:forEach>
+		 --%>
 								</div>
 							</div>
 						</div>
@@ -152,6 +158,6 @@
 		}
 	</script>
 	<script>
-
-</script>
+		
+	</script>
 </html>

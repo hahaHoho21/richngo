@@ -7,12 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import richngo.service.BoardService;
+
 /**
  * Servlet implementation class BoardReadController
  */
-@WebServlet("/BoardReadController")
+@WebServlet("/BoardRead")
 public class BoardReadController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private BoardService service = new BoardService();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -26,16 +29,14 @@ public class BoardReadController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String boardIdStr = request.getParameter("id");
+		try {
+			int boardId = Integer.parseInt(boardIdStr);
+			request.setAttribute("dto", service.selectOne(boardId));
+			request.getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
+		}catch(NumberFormatException e) {
+			System.out.println("!!! NumberFormatException !!!!!!");
+			response.sendRedirect(request.getContextPath()+"board.jsp");
+		}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

@@ -7,34 +7,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import richngo.service.BoardService;
+
 /**
  * Servlet implementation class BoardListController
  */
 @WebServlet("/board")
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BoardController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private BoardService service = new BoardService();
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
-	}
-	
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	public BoardController() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String boardIdStr = request.getParameter("boardId");
+		System.out.println(boardIdStr + " + TEST 1");
+
+		try {
+			int boardId = Integer.parseInt(boardIdStr);
+			request.setAttribute("dto", service.selectOne(boardId));
+			request.getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			System.out.println(boardIdStr + " + TEST 2");
+		}
+	}
 }
