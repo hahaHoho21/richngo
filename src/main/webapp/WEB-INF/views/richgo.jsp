@@ -44,7 +44,7 @@
 				<li><a
 					href="${pageContext.request.contextPath}/go"
 					target="_self" class="nav-link px-1 text-secondary ">Home</a></li>
-				<li><a href="#" class="nav-link px-3 text-secondary">About</a></li>
+				<li><a href="${pageContext.request.contextPath}/board" class="nav-link px-3 text-secondary">문의하기</a></li>
 			</ul>
 			<div class="d-flex flex-wrap justify-content-center" id="topnav">
 				<!-- 지도 검색 -->

@@ -1,87 +1,124 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리치앤고 회원가입</title>
+<title>리치앤고 문의하기</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/agree.css">
-<%-- 
-<jsp:include page="/WEB-INF/views/join.jsp"/>
- --%>
+	href="${pageContext.request.contextPath}/resources/css/board.css">
+
 </head>
 <body>
-
-<%-- 
-	<img
-		src="${pageContext.request.contextPath}/resources/images/office-buildings.jpg"
-		width="100%" height="100%">
-<div id="div-agree">
-	<div class="login-box-bg"></div>
-	<div class="login-box">
-		<a href="${pageContext.request.contextPath}/go" target="_self">
-			<button class="close"></button>
-		</a>
-		<div class=login-box-body>
-			<div class="body-header">
-				<div>이용약관</div>
-			</div>
-			<div class="body-form">
-				<form id="frm-agree">
-					<button type="button" class="agree_all" onclick="nextDisable()">
-						<div>√ 모두 확인, 동의합니다.</div>
-					</button>
-					<div>
-					<input type="checkbox" class="checkbox" onclick="myFunction()">
-					<button type="button" class="agree-btn">리치앤고 서비스 이용약관 동의 <span class="require-span"> (필수)</span></button>
+<!--------------- TODO 메인에서 모달로 띄울 예정 ----------------------->
+<div id="wrap">
+	<header>
+	</header>
+	<div id="wrap-main">
+		<div>
+			<h1>1:1 문의하기</h1>
+			<div class="boardList">
+				<div class="board-header">
+					<button type="button" class="req-btn">1:1문의하기</button>
+				</div>
+				<hr>
+				<div class="board-body">
+					<div class="board-area">
+					<c:choose>
+					<!--  1:1문의 내역이 없습니다. -->
+						<c:when test="${empty map.dtolist }"></c:when>
+						<c:otherwise>
+							<c:forEach items="${map.dtolist }" var="vo" varStatus="vs">
+								<div>${vo.boardId }</div>
+								<div><a href="${pageContext.request.contextPath }/board/read?id=${vo.boardId }">${vo.subject }</a></div>
+								<div>${vo.writeTime }</div>
+								<div>${vo.boardWriter }</div>
+								<div>${vo.readCount }</div>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 					</div>
-					<div>
-					<input type="checkbox" class="checkbox" onclick="myFunction()">
-					<button type="button" class="agree-btn">위치기반 서비스 이용약관 동의 <span class="require-span"> (필수)</span></button>
-					</div>
-					<div>
-					<input type="checkbox" class="checkbox" onclick="myFunction()">
-					<button type="button" class="agree-btn">개인정보처리방침 동의 <span class="require-span"> (필수)</span></button>
-					</div>
-					<div>
-					<input type="checkbox" class="checkbox" onclick="myFunction()">
-					<button type="button" class="agree-btn">만 14세 이상 <span class="require-span"> (필수)</span></button>
-					</div>
-					<div>
-						<button type="button" value=다음 class="btn submit" id="disable" disabled  onclick='btnActive()'>다음</button>
-					</div>
-				</form>
-				<div class="signup">
-					<div class="text"> * 이미 계정이 있으신가요? 
-						<a href="${pageContext.request.contextPath}/login" target="_self">
-							<button type="button" class="signup-btn">로그인</button>
-						</a>
-					</div>
+				</div>
+				<hr>
+				<div class="board-footer">
+					<div>답변이 완료되면 고객님의 이메일로 답변이 완료되었음을 알려 드립니다.</div>
+					<div>현재 1:1 문의가 많아 답변이 지연될 수 있습니다.</div>
 				</div>
 			</div>
 		</div>
+		
 	</div>
+	
+</div>
+<!--------------- TODO 메인에서 모달로 띄울 예정 ----------------------->
+
+
+
+<%-- 
+<div><button type="button" class="btn write" >글쓰기</button></div>
+<div class="board grid">
+<c:choose>
+	<c:when test="${empty map.dtolist }">
+	글 없어요.
+	</c:when>
+	<c:otherwise>
+		<c:forEach items="${map.dtolist }" var="vo" varStatus="vs">
+			<div>${vo.boardId }</div>
+			<div><a href="${pageContext.request.contextPath }/board/read?id=${vo.boardId }">${vo.subject }</a></div>
+			<div>${vo.writeTime }</div>
+			<div>${vo.boardWriter }</div>
+			<div>${vo.readCount }</div>
+		</c:forEach>
+	</c:otherwise>
+</c:choose>
 </div>
 
+<div >
+	<ul>
+	<c:if test="${map.startPageNum > 1}">
+		<li><a href="${pageContext.request.contextPath }/board/list?page=${map.startPageNum-1 }">  &lt;&lt; </a></li>
+	</c:if>
+	<c:forEach begin="${map.startPageNum }" end="${map.endPageNum }" var="page">
+		<c:if test="${map.currentPageNum == page }">
+		<li><strong>${page }</strong></li>
+		</c:if>
+		<c:if test="${map.currentPageNum != page }">
+		<li><a href="${pageContext.request.contextPath }/board/list?page=${page }">${page }</a></li>
+		</c:if>
+	</c:forEach>
+	<c:if test="${map.endPageNum < map.totalPageCount }">
+		<li><a href="${pageContext.request.contextPath }/board/list?page=${map.endPageNum+1 }">  &gt;&gt; </a></li>
+	</c:if>
+	</ul>
+</div>
  --%>
-</body>
-<!-- 
-	<script>
-	$(function(){
-		$("#div-agree").show();
-		$("#div-join").hide();
-	});
-	function nextDisable() {
-		const nextEleTarget = document.getElementById('disable');
-		nextEleTarget.disabled = false;
+<script>
+$(loadedHandler);
+function loadedHandler(){
+	//event 등록
+	$(".btn.write").on("click", btnWriteClickHandler);
+}
+
+function btnWriteClickHandler(){
+	//Login 페이지로 이동
+	if(checkLogin("로그인되어야 글쓰기가 가능합니다.\n로그인페이지로 이동하시겠습니까?","write")){
+		return;
 	}
-	function btnActive() {
-		$("#div-agree").hide();
-		$("#div-join").show();
-		//location.href="${pageContext.request.contextPath}/join"; 
+	
+	location.href="${pageContext.request.contextPath}/board";
+}
+
+function ajaxErrorHandler (request, status, error){
+	alert("code: "+request.status + "\n" + "message: " 
+			+ request.responseText + "\n"
+			+ "error: "+error);
+}
+
+function alertMsg(msg){
+	if(msg){
+		alert(msg);
 	}
-	</script>
-	 -->
+}
+</script>
 </html>

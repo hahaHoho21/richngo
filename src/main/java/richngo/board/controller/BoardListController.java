@@ -7,35 +7,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import richngo.service.BoardService;
+
 /**
  * Servlet implementation class BoardListController
  */
 @WebServlet("/BoardListController")
 public class BoardListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private BoardService service = new BoardService();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public BoardListController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/boardList.jsp").forward(request, response);
 	}
 
 }

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class BoardListController
  */
-@WebServlet("/Board")
+@WebServlet("/board")
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,8 +26,6 @@ public class BoardController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String prePage = request.getParameter("prePage");
-		request.getSession().setAttribute("prePage", prePage);
 		request.getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
 	}
 	

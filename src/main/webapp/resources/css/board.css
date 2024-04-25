@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+#wrap{
+	position: fixed;
+	width:100%; 
+	height:100%;
+	margin: 0 auto;
+}
+
+#wrap-main{
+	position: absolute;
+	margin: 0 auto;
+	padding: 20px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 1000px;
+	height: 562.5px;
+	border: 1px solid #f2feff;
+	border-radius: 10px;
+	background-color: rgb(0 138 255 / 3%);
+}
+
+.req-btn{
+	position: relative;
+	left: 0;
+	/* 플렉스 예정 */
+}
+
+.board-body{
+	height: 350px;
+}
+
+.board-area{
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 2.5fr 3.5fr 1fr 1fr;
+}
+.board-area > div{
+	display : flex;
+	border : 1px solid black;
+	text-align: center;
+}
+
+/* 
+input {
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+body {
+	margin: 0 auto;
+	position: fixed;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+#frm-agree > button,
+#frm-agree > div:nth-child(2),
+#frm-agree > div:nth-child(3),
+#frm-agree > div:nth-child(4),
+#frm-agree > div:nth-child(5) {
+	margin-bottom: 20px;
+}
+
+.label-text {
+	position: relative;
+	margin-bottom: 10px;
+	width: 100%;
+	font-size: 14px;
+	color: #fff;
+	text-align: left;
+}
+
+.body-header {
+	height: 108px;
+	margin-top: 90px;
+	margin-bottom: 33px;
+	font-size: 25px;
+	font-weight: 500;
+}
+
+.body-form {
+	position: relative;
+	height: 260px;
+	bottom: 50px;
+}
+
+input[type=checkbox] {
+	all: unset;
+	cursor: pointer;
+	background-color: transparent;
+	width: 22px;
+	height: 22px;
+	border: 1.2px solid #fff;
+	border-radius: 4px;
+	margin: 3px 0 0;
+}
+
+.agree-btn {
+	position: relative;
+	bottom: 6px;
+	font-size: 14px;
+	color: #fab400;
+	border: 0;
+	font-weight: bold;
+	background-color: transparent;
+}
+
+
+.require-span {
+	color: #fff;
+}
+
+.agree_all, #disable {
+	position: relative;
+	width: 318px;
+	height: 50px;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#disable:disabled {
+  background: #9d9d9d;
+}
+
+.login-box-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 659px;
+	max-width: 458px;
+	background-color: rgba(0, 0, 0, 0.7);
+	filter: blur(3px);
+}
+
+.login-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 659px;
+	max-width: 458px;
+	color: #fff;
+}
+
+.login-box-body {
+	margin: 30px 70px;
+}
+
+닫기버튼
+.close {
+	border: 0;
+	position: absolute;
+	top: 20px;
+	right: 8px;
+	width: 50px;
+	height: 50px;
+	background-image: url(../images/close.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+회원가입
+.signup {
+	position: relative;
+	font-size: 13.8px;
+	bottom: -60px;
+	opacity: 0.9;
+}
+
+.signup-btn {
+	border: 0;
+	padding: 10px;
+	color: #fab400;
+	opacity: 0.9;
+	font-weight: bold;
+	background-color: transparent;
+} 
+*/

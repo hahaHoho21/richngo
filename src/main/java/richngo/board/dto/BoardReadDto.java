@@ -1,6 +1,6 @@
 package richngo.board.dto;
 
-public class BoardInsertDto {
+public class BoardReadDto {
 	private String memEmail; // 30123123
 	private String qnatype; // 오류
 	private String qnatitle; // 어디어디 오류
@@ -12,7 +12,7 @@ public class BoardInsertDto {
 				+ ", qnacontent=" + qnacontent + "]";
 	}
 
-	public BoardInsertDto() {
+	public BoardReadDto() {
 		super();
 	}
 

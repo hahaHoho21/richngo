@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<properties resource="driver.properties"/>
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+		<!-- package 내 클래스명이 별칭으로 상용됨 -->
+		<package name="kh.mclass.semim.board.model.dto"/>
+		<package name="kh.mclass.semim.member.model.dto"/>
+	</typeAliases>
+
+	<environments default="semimDbServer">
+		<environment id="semimLocalhost">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.semi.localhost.url}" />
+				<property name="username" value="${jdbc.semi.username}" />
+				<property name="password" value="${jdbc.semi.password}" />
+			</dataSource>
+		</environment>
+		<environment id="semimDbServer">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.semi.dbserver.url}" />
+				<property name="username" value="${jdbc.semi.username}" />
+				<property name="password" value="${jdbc.semi.password}" />
+			</dataSource>
+		</environment>
+		<environment id="scottLocalhost">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.semi.localhost.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mappers/board-mapper.xml"/>
+		<mapper resource="mappers/member-mapper.xml"/>
+		<!-- xxx-mapper.xml 생성 후 추가 -->
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -74,7 +74,7 @@
 							success : function(result) {
 								console.log(result);
 								if (result == 1) {
-									alert("반갑습니다.");
+									alert("안녕하세요.");
 									var prePage = "${prePage}";
 									if (prePage == "write") {
 										location.href = "${pageContext.request.contextPath}/board/write";
