@@ -76,7 +76,7 @@ public class ApartmentTransactioPriceAPI {
     private static void insertDataToDatabase(String xmlData) throws Exception {
         Connection conn = null;
         try {
-            conn = JdbcTemplate.getSemiConnection(true); // 로컬 데이터베이스 연결
+            conn = JdbcTemplate.getConnection(true); // 로컬 데이터베이스 연결
 
             // XML 파싱
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

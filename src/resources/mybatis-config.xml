@@ -10,8 +10,8 @@
 
 	<typeAliases>
 		<!-- package 내 클래스명이 별칭으로 상용됨 -->
-		<package name="kh.mclass.semim.board.model.dto"/>
-		<package name="kh.mclass.semim.member.model.dto"/>
+		<package name="richngo.board.dto"/>
+		<package name="richngo.member.dto"/>
 	</typeAliases>
 
 	<environments default="semimDbServer">
@@ -19,27 +19,18 @@
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="${jdbc.driver}" />
-				<property name="url" value="${jdbc.semi.localhost.url}" />
-				<property name="username" value="${jdbc.semi.username}" />
-				<property name="password" value="${jdbc.semi.password}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
 			</dataSource>
 		</environment>
 		<environment id="semimDbServer">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="${jdbc.driver}" />
-				<property name="url" value="${jdbc.semi.dbserver.url}" />
-				<property name="username" value="${jdbc.semi.username}" />
-				<property name="password" value="${jdbc.semi.password}" />
-			</dataSource>
-		</environment>
-		<environment id="scottLocalhost">
-			<transactionManager type="JDBC"></transactionManager>
-			<dataSource type="POOLED">
-				<property name="driver" value="${jdbc.driver}" />
-				<property name="url" value="${jdbc.semi.localhost.url}" />
-				<property name="username" value="${jdbc.username}" />
-				<property name="password" value="${jdbc.password}" />
+				<property name="url" value="${jdbc.dbserver.url}" />
+				<property name="username" value="${jdbc.dbserver.username}" />
+				<property name="password" value="${jdbc.dbserver.password}" />
 			</dataSource>
 		</environment>
 	</environments>

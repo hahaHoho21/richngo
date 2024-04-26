@@ -93,40 +93,12 @@ public class BoardService {
 		if(result != null) {
 			dao.updateReadCount(session, boardId);
 		}
-//		TODO MemberFileReadDto 미생성으로 인해 임시 주석 처리
-//		List<MemberFileReadDto> filelist = dao.selectFileList(session, boardId);	
-//		result.setFiledtolist(filelist);
-		
-		// ajax 대체
-//		List<BoardReplyListDto> replylist = dao.selectBoardReplyList(session, boardId);	
-//		result.setReplydtolist(replylist);
+
 		session.close();
 		return result;
 	}
 	
-	
-//		insert - boardreply
-//		TODO insertReply 미생성으로 인해 임시 주석 처리
-//	public int insertReply(BoardReplyWriteDto dto) {
-//		int result = 0;
-//		int resultupdate = 0;
-//		SqlSession session = getSqlSession(false);
-//		if(dto.getBoardReplyId() != 0) {
-//			resultupdate = dao.updateReplyStep(session, dto.getBoardReplyId());
-//			if(resultupdate > -1) {
-//				result = dao.insertRReply(session, dto);
-//			}
-//		} else {
-//			result = dao.insertReply(session, dto);
-//		}
-//		if(resultupdate > -1 && result > 0) {
-//			session.commit();
-//		}else {
-//			session.rollback();
-//		}
-//		session.close();
-//		return result;
-//	}
+
 	// insert
 	public int insert(BoardInsertDto dto) {
 		int result = 0;

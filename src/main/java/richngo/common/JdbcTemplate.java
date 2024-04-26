@@ -13,7 +13,7 @@ public class JdbcTemplate {
 	private JdbcTemplate() {}
 	
 	// static 메소드로 만들기
-	  public static Connection getSemiConnection(boolean isLocalhost){
+	  public static Connection getConnection(boolean isLocalhost){
 	        Connection conn = null;
 	        Properties prop = new Properties();
 	        try {
@@ -34,8 +34,8 @@ public class JdbcTemplate {
 	            } else {
 	                conn = DriverManager.getConnection(
 	                        prop.getProperty("jdbc.dbserver.url"),
-	                        prop.getProperty("jdbc.username"),
-	                        prop.getProperty("jdbc.password")
+	                        prop.getProperty("jdbc.dbserver.username"),
+	                        prop.getProperty("jdbc.dbserver.password")
 	                );
 	            }
 
@@ -60,9 +60,9 @@ public class JdbcTemplate {
 
 			prop.load(new FileReader(currentPath+"driver.properties"));
 			Class.forName(prop.getProperty("jdbc.driver"));
-			conn = DriverManager.getConnection(prop.getProperty("jdbc.url")
-											, prop.getProperty("jdbc.username")
-											, prop.getProperty("jdbc.password"));
+			conn = DriverManager.getConnection(prop.getProperty("jdbc.dbserver.url")
+											, prop.getProperty("jdbc.dbserver.username")
+											, prop.getProperty("jdbc.dbserver.password"));
 			
 			if(conn != null) System.out.println("연결성공"); else System.out.println("연결실패!!!!!!!!!");
 		} catch (Exception e) {

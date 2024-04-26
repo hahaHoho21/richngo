@@ -17,7 +17,7 @@
 		<header> </header>
 		<div id="wrap-main">
 			<div>
-				<h1>1:1 문의하기</h1>
+				<h1 class="title">1:1 문의하기</h1>
 				<div class="boardList">
 					<div class="board-header">
 						<button type="button" class="req-btn">1:1문의하기</button>
@@ -26,35 +26,45 @@
 					<div class="board-body">
 						<div class="board-area">
 							<!--  1:1문의 내역이 없습니다. -->
-							<div class="board grid">
-								<div class="flex">
-									<div>${dto.boardId }</div>
-									<div>${dto.writeTime }</div>
-									<div>${dto.memEmail }</div>
-									<div>${dto.qnatype }</div>
-									<div>${dto.qnatitle }</div>
-									<div>${dto.qnacontent }</div>
-									<div>${dto.processingStatus }</div>
-									<div>${dto.completeTime }</div>
-								</div>
-								<div class="subject">${dto.qnatitle }</div>
-								<div>${dto.qnacontent }</div>
-								<div>
-									<form id="frm-reply">
-										<input type="hidden" name="boardId" value="${dto.boardId }">
-										<div class="flex">
-											<div>댓글</div>
-											<div>
-												<input type="text" name="boardReplyContent" required>
-											</div>
-											<div>
-												<button type="button" class="btn replay">댓글달기</button>
-											</div>
-										</div>
-									</form>
-								</div>
-								<div class="reply-wrap">
-									<%-- 	
+							<div class="board-grid">
+								<div class="grid-area">게시물 번호</div>
+								<div class="grid-area">작성 시간</div>
+								<div class="grid-area">아이디</div>
+								<div class="grid-area">질문 유형</div>
+								<div class="grid-area">제목</div>
+								<div class="grid-area">내용</div>
+								<div class="grid-area">상태</div>
+								<div class="grid-area">완료일</div>
+
+								<c:forEach items="${dtolist }" var="dto">
+									<div class="grid-content">${dto.boardId }</div>
+									<div class="grid-content">${dto.writeTime }</div>
+									<div class="grid-content">${dto.memEmail }</div>
+									<div class="grid-content">${dto.qnatype }</div>
+									<div class="grid-content">${dto.qnatitle }</div>
+									<div class="grid-content">${dto.qnacontent }</div>
+									<div class="grid-content">${dto.processingStatus }</div>
+									<div class="grid-content">${dto.completeTime }</div>
+								</c:forEach>
+							</div>
+							<div class="subject">${dto.qnatitle }</div>
+							<div>${dto.qnacontent }</div>
+							<div></div>
+							<div class="reply-wrap"></div>
+						</div>
+					</div>
+					<div class="board-footer">
+					<hr>
+						<div>답변이 완료되면 고객님의 이메일로 답변이 완료되었음을 알려 드립니다.</div>
+						<div>현재 1:1 문의가 많아 답변이 지연될 수 있습니다.</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<%-- 	
 	<c:forEach items="${dto.replydtolist }" var="replydto">
 			<form class="frm-rreply">
 			<input type="hidden" name="boardId" value="${dto.boardId }">
@@ -73,21 +83,7 @@
 			</form>
 		</c:forEach>
 		 --%>
-								</div>
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="board-footer">
-						<div>답변이 완료되면 고객님의 이메일로 답변이 완료되었음을 알려 드립니다.</div>
-						<div>현재 1:1 문의가 많아 답변이 지연될 수 있습니다.</div>
-					</div>
-				</div>
-			</div>
 
-		</div>
-
-	</div>
 	<!--------------- TODO 메인에서 모달로 띄울 예정 ----------------------->
 
 

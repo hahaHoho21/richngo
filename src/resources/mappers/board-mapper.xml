@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">
-	<resultMap type="FileReadDto" id="FileReadDtoResultMap">
-		<result column="BOARD_ID" property="boardId"/>
-		<result column="WRITE_TIME" property="writeTime"/>
-		<result column="MEM_EMAIL" property="memEmail"/>
-		<result column="QNA_TYPE" property="qnatype"/>
-		<result column="QNA_TITLE" property="qnatitle"/>
-		<result column="QNA_CONTENT" property="qnacontent"/>
-		<result column="PROCESSING_STATUS" property="processingStatus"/>
-		<result column="COMPLETE_TIME" property="completeTime"/>
-	</resultMap>
+	<select id="selectAllList" resultType="BoardListDto">
+		SELECT BOARD_ID, WRITE_TIME,MEM_EMAIL,QNA_TYPE,QNA_TITLE,QNA_CONTENT,PROCESSING_STATUS,COMPLETE_TIME    
+		FROM BOARD
+	</select>
+	
+	<select id="selectOne" resultType="BoardReadDto" parameterType="int">
+		SELECT BOARD_ID, WRITE_TIME,MEM_EMAIL,QNA_TYPE,QNA_TITLE,QNA_CONTENT,PROCESSING_STATUS,COMPLETE_TIME    
+		FROM BOARD WHERE BOARD_ID=#{boardId}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- 	
 	BOARD_ID, WRITE_TIME,MEM_EMAIL,QNA_TYPE,QNA_TITLE,QNA_CONTENT,PROCESSING_STATUS,COMPLETE_TIME    
 	private String boardId; // 23
@@ -21,7 +40,7 @@
 	private String qnacontent; // 어디어디 오류가 있네요
 	private String processingStatus; // 처리중 or 답변완료
 	private String completeTime; // TIMESTAMP 
-	-->
+
 
 	<select id="selectFileList" parameterType="int" resultMap="FileReadDtoResultMap">
 		SELECT BOARD_ID, BOARD_FILE_ID, SAVED_FILE_PATH_NAME, ORIGINAL_FILENAME   
@@ -50,17 +69,7 @@
 				from (SELECT BOARD_ID, SUBJECT, WRITE_TIME, BOARD_WRITER, READ_COUNT    FROM BOARD order by board_id desc) t1 )
 		where rn between #{startRownum} and #{endRownum}
 	</select>
-	
-	<select id="selectAllList" resultType="BoardListDto">
-		SELECT BOARD_ID, WRITE_TIME,MEM_EMAIL,QNA_TYPE,QNA_TITLE,QNA_CONTENT,PROCESSING_STATUS,COMPLETE_TIME    
-		FROM BOARD
-	</select>
-	
-	<select id="selectOne" resultType="BoardReadDto" parameterType="int">
-		SELECT BOARD_ID, WRITE_TIME,MEM_EMAIL,QNA_TYPE,QNA_TITLE,QNA_CONTENT,PROCESSING_STATUS,COMPLETE_TIME    
-		FROM BOARD WHERE BOARD_ID=#{boardId}
-	</select>
-	
+
 	<select id="getSequenceNum" resultType="int">
 	SELECT SEQ_BOARD_ID.nextval seq FROM DUAL
 	</select>
@@ -109,7 +118,8 @@
 	<delete id="delete"  parameterType="int">
 		DELETE FROM BOARD WHERE BOARD_ID=#{boardId}
 	</delete>
-</mapper>
+	-->
+
 
 
 

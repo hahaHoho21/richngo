@@ -17,7 +17,6 @@ public class MemberDao {
 	// select one login
 	public MemberInfoDto loginGetInfo(Connection conn, MemberLoginDto dto) {
 
-				
 		MemberInfoDto result = null;
 		String sql = "SELECT MEM_EMAIL FROM MEMBER WHERE MEM_EMAIL=? AND MEM_PWD=?";
 		PreparedStatement pstmt = null;
@@ -39,7 +38,6 @@ public class MemberDao {
 		close(pstmt);
 		return result;
 	}
-	
 	
 	// select one login
 	public int login(Connection conn, MemberLoginDto dto) {
@@ -90,10 +88,6 @@ public class MemberDao {
 		return result;
 	}
 	
-	
-	
-	
-	
 	// select list - all
 	public List<MemberDto> selectAllList(Connection conn) {
 		System.out.println("MemberDao selectAllList");
@@ -143,54 +137,54 @@ public class MemberDao {
 		close(pstmt);
 		return result;
 	}
-	// insert
-	public int insert(Connection conn, MemberDto dto) {
-		int result = 0;
-		String sql = "INSERT INTO MEMBER (MEM_CODE,MEM_EMAIL,MEM_PWD) VALUES (?, ?, ?)";
-		PreparedStatement pstmt = null;
-		try {
-			pstmt = conn.prepareStatement(sql);
-			// ? 처리
-			pstmt.setString(1, dto.getMemCode());
-			pstmt.setString(2, dto.getMemEmail());
-			pstmt.setString(3, dto.getMemPwd());
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		close(pstmt);
-		return result;
-	}
-	// update
-	public int update(Connection conn, MemberDto dto) {
-		int result = 0;
-		String sql = "";  
-		PreparedStatement pstmt = null;
-		try {
-			pstmt = conn.prepareStatement(sql);
-			// ? 처리
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		close(pstmt);
-		return result;
-	}
-	// delete
-	public int delete(Connection conn, String memEmail) {
-		int result = 0;
-		String sql = "DELETE FROM MEMBER WHERE MEM_EMAIL=?";
-		PreparedStatement pstmt = null;
-		try {
-			pstmt = conn.prepareStatement(sql);
-			// ? 처리
-			pstmt.setString(1, memEmail);
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		close(pstmt);
-		return result;
-	}
+//	// insert
+//	public int insert(Connection conn, MemberDto dto) {
+//		int result = 0;
+//		String sql = "INSERT INTO MEMBER (MEM_CODE,MEM_EMAIL,MEM_PWD) VALUES (?, ?, ?)";
+//		PreparedStatement pstmt = null;
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			// ? 처리
+//			pstmt.setString(1, dto.getMemCode());
+//			pstmt.setString(2, dto.getMemEmail());
+//			pstmt.setString(3, dto.getMemPwd());
+//			result = pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		close(pstmt);
+//		return result;
+//	}
+//	// update
+//	public int update(Connection conn, MemberDto dto) {
+//		int result = 0;
+//		String sql = "";  
+//		PreparedStatement pstmt = null;
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			// ? 처리
+//			result = pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		close(pstmt);
+//		return result;
+//	}
+//	// delete
+//	public int delete(Connection conn, String memEmail) {
+//		int result = 0;
+//		String sql = "DELETE FROM MEMBER WHERE MEM_EMAIL=?";
+//		PreparedStatement pstmt = null;
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			// ? 처리
+//			pstmt.setString(1, memEmail);
+//			result = pstmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		close(pstmt);
+//		return result;
+//	}
 	
 }

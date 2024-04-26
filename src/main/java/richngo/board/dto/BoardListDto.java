@@ -17,8 +17,17 @@ public class BoardListDto {
 				+ processingStatus + ", completeTime=" + completeTime + "]";
 	}
 
-	public BoardListDto() {
+	public BoardListDto(String boardId, String writeTime, String memEmail, String qnatype, String qnatitle,
+			String qnacontent, String processingStatus, String completeTime) {
 		super();
+		this.boardId = boardId;
+		this.writeTime = writeTime;
+		this.memEmail = memEmail;
+		this.qnatype = qnatype;
+		this.qnatitle = qnatitle;
+		this.qnacontent = qnacontent;
+		this.processingStatus = processingStatus;
+		this.completeTime = completeTime;
 	}
 
 	public String getBoardId() {

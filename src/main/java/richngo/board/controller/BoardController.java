@@ -22,7 +22,6 @@ public class BoardController extends HttpServlet {
 	 */
 	public BoardController() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -31,16 +30,13 @@ public class BoardController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String boardIdStr = request.getParameter("boardId");
-		System.out.println(boardIdStr + " + TEST 1");
 
 		try {
-			int boardId = Integer.parseInt(boardIdStr);
-			request.setAttribute("dto", service.selectOne(boardId));
+			request.setAttribute("dtolist", service.selectAllList());
 			request.getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
-			System.out.println(boardIdStr + " + TEST 2");
+			System.out.println("doGet 오류........");
 		}
 	}
 }
