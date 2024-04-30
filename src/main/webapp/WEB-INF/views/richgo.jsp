@@ -193,24 +193,3 @@
 	crossorigin="anonymous"></script>
 
 </html>
-<script>
-
-</script>
-
-
-<!-- 
-     주소 위도 경도 -
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>주소</th>
-                    <th>위도</th>
-                    <th>경도</th>
-                </tr>
-            </thead>
-            <tbody id="mapList"></tbody>
-        </table>
-    </div>
- -->
-

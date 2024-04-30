@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+button {
+	cursor: pointer;
+}
+
 #wrap {
 	position: fixed;
 	width: 100%;
@@ -27,9 +31,9 @@
 	justify-content: flex-end /* 플렉스 예정 */
 }
 
-.title{
+.title {
 	padding: 20px;
-}	
+}
 
 .req-btn {
 	color: white;
@@ -46,7 +50,7 @@
 	overflow: hidden;
 }
 
-.board-footer{
+.board-footer {
 	position: absolute;
 	margin: 0 auto;
 	padding: 20px;
@@ -60,8 +64,7 @@
 .board-grid {
 	margin-top: 20px;
 	display: grid;
-	grid-template-columns: 1.25fr 1.25fr 1.25fr 1.25fr 2fr 2.5fr 1.25fr
-		1.25fr;
+	grid-template-columns: 1fr 1fr 2fr 1fr 4fr 1fr 1fr 1fr;
 	overflow: hidden;
 }
 
@@ -81,10 +84,117 @@
 	padding: 10px;
 	font-size: 14px;
 	overflow: hidden;
-	height: 14px;
+	height: 12px;
 }
 
 .flex {
 	
+}
+
+/* 아래부터 문의하기 상세페이지 모달 */
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 100%;
+	max-width: 100%;
+	color: #000;
+}
+
+.close {
+	position: absolute;
+	top: -45px;
+	right: -30px;
+	width: 50px;
+	height: 50px;
+	background-image: url(../images/close.png);
+	background-repeat: no-repeat;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.modal-title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.modal-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 800px;
+	max-width: 550px;
+	background-color: rgb(255, 255, 255);
+	filter: blur(3px);
+	border: 1px solid black;
+}
+
+.wrap-modal {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 670px;
+	max-width: 470px;
+	color: #000;
+	align-content: center;
+}
+
+.qna-modal-title {
+	width: 105px;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 16px;
+	align-content: center;
+}
+
+.qna-modal-content {
+	width: 160px;
+	margin-top: 20px;
+}
+
+.qna-modal-Lcontent {
+	width: 285px;
+	margin-top: 20px;
+}
+
+.qna-modal-LLtitle {
+	width: 105px;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 16px;
+	align-content: center;
+	height: 200px;
+}
+
+.qna-modal-LLcontent {
+	width: 345px;
+	margin-top: 20px;
+	height: 200px;
+	align-content: center;
+}
+
+.modal-hr {
+	margin-top: 40px;
+}
+
+.board-grid2 {
+	display: grid;
+	grid-template-columns: 105px 285px;
+	overflow: hidden;
+	align-content: center;
+}
+
+.qna-email {
+	width: 100px;
 }
 
