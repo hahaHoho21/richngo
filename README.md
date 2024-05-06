@@ -105,7 +105,10 @@
   
 </table>
 
+
 <br>
 <HR>
 <br>
+
+[리치앤고_발표자료.pdf](https://github.com/hahaHoho21/richngo/files/15222874/_.pdf)
 
