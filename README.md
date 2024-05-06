@@ -24,12 +24,81 @@
 
 ### **사용기술 및 개발환경**
 
-> JAVA(SE11), Jquery(2.2.4), XML(1.0), Oracle DB(21.3), JSP, Ajax(1.89), Servlet, Tomcat(9.0.82), HTML(5), CSS, JS
-> 
-> COS.jar(2022.2), GSON.jar(2.10.1), JSON.jar(240303), JSTL.jar(1.2), MyBatis.jar(3.5.15), ojdbc.jar(11)
-> 
-> 카카오지도 API(카카오), 아파트실거래가 API(공공데이터)
+<table>
+  <tr>
+    <th>
+      운영체제
+    </th>
+    <td>
+      Window 10 64Bit
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      웹 브라우저
+    </th>
+    <td>
+      Chrome
+    </td>
+  </tr>
 
+  <tr>
+    <th>
+      웹 어플리케이션 서버
+    </th>
+    <td>
+      Apache Tomcat (9.0.82)
+    </td>
+  </tr>
 
+  <tr>
+    <th>
+      개발 언어
+    </th>
+    <td>
+      Java (JSP, Servlet), JavaScript
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      라이브러리
+    </th>
+    <td>
+      jQuery (2.2.4), XML (1.0), HTML (5), CSS, COS.jar (2022.2), GSON.jar (2.10.1), JSON.jar (240303), JSTL.jar (1.2), MyBatis.jar (3.5.15), ojdbc.jar (11)
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      데이터베이스
+    </th>
+    <td>
+       Oracle Database 21c EE(21.3.0.0.0))
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      오픈소스 API
+    </th>
+    <td>
+      카카오지도 API (카카오), 아파트실거래가 API (공공데이터)
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      버전 관리 시스템
+    </th>
+    <td>
+      Git (GitHub Desktop)
+    </td>
+  </tr>
+  
+</table>
+
+<HR>
 
 
